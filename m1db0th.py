@@ -17,7 +17,7 @@ print("""
    
 
     Note:
-            Before your "dataanlyzer.py" the MITM attack before the attack.
+            Before your "datanlyzer.py" the MITM attack before the attack.
             If you want to login to a target http site, the username and password appear in the "file.
 
   
