@@ -6,7 +6,7 @@ import optparse
 os.system("echo 1 > /proc/sys/net/ipv4/ip_forward")
 print("""  
                         |--------------------------------------|
-                        |        Welcome the M1dB0th       |
+                        |        Welcome the M1dB0th           |
                         |       Developed By SweatherX         |
                         |--------------------------------------|
     Kullanım:
