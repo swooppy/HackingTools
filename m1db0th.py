@@ -10,26 +10,30 @@ print("""
                         |       Developed By SweatherX         |
                         |--------------------------------------|
     Kullanım:
-            -t veya --target [Hedef IP], -r veya --host [Hedef Modem IP]
+            -t or --target [Target IP], -r or --host [Target Modem IP]
             Çıkış: Ctrl+C
                  
                  
-    Not:         
-            MITM saldırısını başlatmadan önce "datanlyzer.py" dosyasını açınız.
-            Eğer hedef http bir siteye girip login olursa kullanıcı adı ve şifre "datanlyzer.py" dosyasında gözükür.  
+   
+
+    Note:
+            Before your "dataanlyzer.py" the MITM attack before the attack.
+            If you want to login to a target http site, the username and password appear in the "file.
+
+  
     """)
 def giris():
     parse = optparse.OptionParser()
 
-    parse.add_option("-t","--target",dest="hedef_ip",help="Hedef ip giriniz.")
-    parse.add_option("-r","--host",dest="modem_ip",help="Modem ip giriniz")
+    parse.add_option("-t","--target",dest="hedef_ip",help="Enter target ip.")
+    parse.add_option("-r","--host",dest="modem_ip",help="Enter taregt modem ip.")
 
     ayarlar = parse.parse_args()[0]
 
     if not ayarlar.hedef_ip:
-        print("Hedef ip giriniz.")
+        print("Enter target ip.")
     if not ayarlar.modem_ip:
-        print("Hedef modem ip'sini giriniz")
+        print("Enter taregt modem ip.")
     return ayarlar
 
 def macbulucu(ip):
@@ -60,11 +64,11 @@ try:
         arpas(modem,hedef)
 
         sayac += 2
-        print("\rGönderilen Paket : "+ str(sayac),end="")
+        print("\Sended Packages : "+ str(sayac),end="")
         time.sleep(1)
 
 except KeyboardInterrupt :
-    print("\nÇıkış Yapılıyor...")
+    print("\nQuiting...")
     reset(hedef,modem)
     reset(modem,hedef)
 
